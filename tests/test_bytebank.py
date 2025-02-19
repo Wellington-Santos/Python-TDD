@@ -48,8 +48,8 @@ class TestClass:
         entrada_salario = 1000
         esperado = 100
 
-        funionario_teste = Funcionario('Ana','12/03/1997', entrada_salario)
-        resultado = funionario_teste.calcular_bonus()
+        funcionario_teste = Funcionario('Ana','12/03/1997', entrada_salario)
+        resultado = funcionario_teste.calcular_bonus()
 
         assert resultado == esperado
 
@@ -58,7 +58,16 @@ class TestClass:
         with pytest.raises(Exception):
             entrada_salario = 1000000
 
-            funionario_teste = Funcionario('Ana','12/03/1997', entrada_salario)
-            resultado = funionario_teste.calcular_bonus()
+            funcionario_teste = Funcionario('Ana','12/03/1997', entrada_salario)
+            resultado = funcionario_teste.calcular_bonus()
 
             assert resultado
+
+    def test_retorno_str(self):
+        
+        nome, data_nascimento, salario = 'Teste', '12/03/2000', 1000
+        esperado = 'Funcionario(Teste, 12/03/2000, 1000)'
+
+        funcionario_teste = Funcionario(nome,data_nascimento, salario)
+        resultado = funcionario_teste.__str__()
+        assert resultado == esperado

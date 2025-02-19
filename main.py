@@ -1,4 +1,4 @@
-from bytebank import Funcionario
+from app.bytebank import Funcionario
 
 # lucas = Funcionario("Lucas Silva","06/08/1997",1000)
 
